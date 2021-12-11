@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B777B95A27647DED00EF0E4C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B777B95927647DED00EF0E4C /* HomeViewController.swift */; };
 		CE4E8661275F423E0010B915 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E8660275F423E0010B915 /* AppDelegate.swift */; };
 		CE4E8663275F423E0010B915 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E8662275F423E0010B915 /* ViewController.swift */; };
 		CE4E8666275F423E0010B915 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4E8664275F423E0010B915 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B777B95927647DED00EF0E4C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		CE4E865D275F423D0010B915 /* viary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = viary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4E8660275F423E0010B915 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE4E8662275F423E0010B915 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				CE4E866C275F424B0010B915 /* LaunchScreen.storyboard */,
 				CE4E866F275F424B0010B915 /* Info.plist */,
 				CE4E8667275F423E0010B915 /* viary.xcdatamodeld */,
+				B777B95927647DED00EF0E4C /* HomeViewController.swift */,
 			);
 			path = viary;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				E645C1892762405500E3305C /* ProfileViewController.swift in Sources */,
 				CE4E8669275F423E0010B915 /* viary.xcdatamodeld in Sources */,
 				E63D4BA427646BFB00DCAEEB /* CreateEditViewController.swift in Sources */,
+				B777B95A27647DED00EF0E4C /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
