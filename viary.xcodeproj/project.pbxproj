@@ -13,6 +13,7 @@
 		CE4E8669275F423E0010B915 /* viary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE4E8667275F423E0010B915 /* viary.xcdatamodeld */; };
 		CE4E866B275F424A0010B915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4E866A275F424A0010B915 /* Assets.xcassets */; };
 		CE4E866E275F424B0010B915 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4E866C275F424B0010B915 /* LaunchScreen.storyboard */; };
+		E63D4BA427646BFB00DCAEEB /* CreateEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63D4BA327646BFB00DCAEEB /* CreateEditViewController.swift */; };
 		E645C1892762405500E3305C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E645C1882762405500E3305C /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		CE4E866A275F424A0010B915 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE4E866D275F424B0010B915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE4E866F275F424B0010B915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E63D4BA327646BFB00DCAEEB /* CreateEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEditViewController.swift; sourceTree = "<group>"; };
 		E645C1882762405500E3305C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +63,7 @@
 				CE4E8660275F423E0010B915 /* AppDelegate.swift */,
 				CE4E8662275F423E0010B915 /* ViewController.swift */,
 				CE4E8664275F423E0010B915 /* Main.storyboard */,
+				E63D4BA327646BFB00DCAEEB /* CreateEditViewController.swift */,
 				E645C1882762405500E3305C /* ProfileViewController.swift */,
 				CE4E866A275F424A0010B915 /* Assets.xcassets */,
 				CE4E866C275F424B0010B915 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				CE4E8661275F423E0010B915 /* AppDelegate.swift in Sources */,
 				E645C1892762405500E3305C /* ProfileViewController.swift in Sources */,
 				CE4E8669275F423E0010B915 /* viary.xcdatamodeld in Sources */,
+				E63D4BA427646BFB00DCAEEB /* CreateEditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
