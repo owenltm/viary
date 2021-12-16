@@ -645,6 +645,9 @@
                                 <state key="normal" title="LOGIN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="login:" destination="Wc2-VK-Vmp" eventType="touchUpInside" id="bLS-qU-17T"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyV-EO-FU6">
                                 <rect key="frame" x="163.5" y="557" width="48" height="30"/>
@@ -679,6 +682,8 @@
                         <viewLayoutGuide key="safeArea" id="hNQ-gV-lpW"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTextField" destination="f2v-Ef-5Sp" id="cjr-oD-lX4"/>
+                        <outlet property="usernameTextField" destination="kQf-VC-SDY" id="kDq-sT-9By"/>
                         <segue destination="B3v-fY-cGl" kind="show" identifier="goToMain" id="vgK-wE-Iao"/>
                     </connections>
                 </viewController>
