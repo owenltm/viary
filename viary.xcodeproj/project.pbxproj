@@ -17,6 +17,7 @@
 		CE9430B0276B0A4F004BCC97 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9430AF276B0A4F004BCC97 /* WelcomeViewController.swift */; };
 		CE9430B4276B0A7A004BCC97 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9430B3276B0A7A004BCC97 /* LoginViewController.swift */; };
 		CE9430B6276B0A8C004BCC97 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9430B5276B0A8C004BCC97 /* RegisterViewController.swift */; };
+		CEBC390B276B1843002C6B35 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC390A276B1843002C6B35 /* Helper.swift */; };
 		E63D4BA427646BFB00DCAEEB /* CreateEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63D4BA327646BFB00DCAEEB /* CreateEditViewController.swift */; };
 		E645C1892762405500E3305C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E645C1882762405500E3305C /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		CE9430AF276B0A4F004BCC97 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		CE9430B3276B0A7A004BCC97 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE9430B5276B0A8C004BCC97 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		CEBC390A276B1843002C6B35 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E63D4BA327646BFB00DCAEEB /* CreateEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEditViewController.swift; sourceTree = "<group>"; };
 		E645C1882762405500E3305C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 				CE9430AF276B0A4F004BCC97 /* WelcomeViewController.swift */,
 				CE9430B3276B0A7A004BCC97 /* LoginViewController.swift */,
 				CE9430B5276B0A8C004BCC97 /* RegisterViewController.swift */,
+				CEBC390A276B1843002C6B35 /* Helper.swift */,
 			);
 			path = viary;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				CE4E8669275F423E0010B915 /* viary.xcdatamodeld in Sources */,
 				CE9430B4276B0A7A004BCC97 /* LoginViewController.swift in Sources */,
 				E63D4BA427646BFB00DCAEEB /* CreateEditViewController.swift in Sources */,
+				CEBC390B276B1843002C6B35 /* Helper.swift in Sources */,
 				B777B95A27647DED00EF0E4C /* HomeViewController.swift in Sources */,
 				CE9430B0276B0A4F004BCC97 /* WelcomeViewController.swift in Sources */,
 			);

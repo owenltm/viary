@@ -526,6 +526,9 @@
                                 <state key="normal" title="REGISTER">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerUser:" destination="ehm-fl-zgW" eventType="touchUpInside" id="ysl-gc-iRt"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z8i-Wa-MsI">
                                 <rect key="frame" x="16" y="391" width="343" height="30"/>
@@ -540,8 +543,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTd-8k-7f8">
-                                <rect key="frame" x="164.5" y="616" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="163.5" y="616" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="hgS-UD-I1P" kind="unwind" identifier="cancelRegister" unwindAction="unwindToWelcome:" id="2g2-Va-aec"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -573,8 +579,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C3B-aI-2Q2"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="PwI-h2-N79" id="WUb-Td-8Sk"/>
+                        <outlet property="passwordTextField" destination="z8i-Wa-MsI" id="fpe-v2-Jlb"/>
+                        <outlet property="usernameTextField" destination="kn3-2Y-HC5" id="Exh-Aa-pK4"/>
+                        <segue destination="hgS-UD-I1P" kind="unwind" identifier="backToWelcome" unwindAction="unwindToWelcome:" id="lkO-iD-PLQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edx-zz-ONP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hgS-UD-I1P" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-535.20000000000005" y="-2021.7391304347827"/>
         </scene>
@@ -634,8 +647,11 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyV-EO-FU6">
-                                <rect key="frame" x="164.5" y="557" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="163.5" y="557" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="JfX-SU-FbB" kind="unwind" identifier="cancelLogin" unwindAction="unwindToWelcome:" id="y9N-4j-Dly"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -663,10 +679,11 @@
                         <viewLayoutGuide key="safeArea" id="hNQ-gV-lpW"/>
                     </view>
                     <connections>
-                        <segue destination="B3v-fY-cGl" kind="show" id="vgK-wE-Iao"/>
+                        <segue destination="B3v-fY-cGl" kind="show" identifier="goToMain" id="vgK-wE-Iao"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Sa-cO-A3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="JfX-SU-FbB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-535.20000000000005" y="-1253.5232383808097"/>
         </scene>
