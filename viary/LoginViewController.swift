@@ -25,8 +25,18 @@ class LoginViewController: UIViewController {
     @IBAction func login(_ sender: Any) {
         var valid = true
         
-        if Helper.numberOfCharacters(str: usernameTextField.text!) == 0 || Helper.numberOfCharacters(str: passwordTextField.text!) == 0 {
+        if Helper.numberOfCharacters(str: usernameTextField.text!) == 0{
             valid = false
+            
+            let alert = Helper.makeAlert(msg: "Username cannot be empty", handler: nil, showCancel: false)
+            present(alert, animated: false, completion: nil)
+            
+        } else if Helper.numberOfCharacters(str: passwordTextField.text!) == 0 {
+            valid = false
+            
+            let alert = Helper.makeAlert(msg: "Password cannot be empty", handler: nil, showCancel: false)
+            present(alert, animated: false, completion: nil)
+
         }
         
         if valid {

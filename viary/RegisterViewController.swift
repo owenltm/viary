@@ -27,21 +27,21 @@ class RegisterViewController: UIViewController {
         var valid = true;
         
         if Helper.numberOfCharacters(str: usernameTextField.text!) < 6 {
-            // ALERT: username must be atleast 6 characters
+            // ALERT: username must be atleast 6 charactersvalid = false
             
+            let alert = Helper.makeAlert(msg: "Ssername must be atleast 6 characters", handler: nil, showCancel: false)
+            present(alert, animated: false, completion: nil)
+
+        } else if Helper.numberOfCharacters(str: passwordTextField.text!) < 6 {
             valid = false
-        }
-        
-        if Helper.numberOfCharacters(str: passwordTextField.text!) < 6 {
-            // ALERT: password must be atleast 8 characters
             
+            let alert = Helper.makeAlert(msg: "Password must be atleast 8 characters", handler: nil, showCancel: false)
+            present(alert, animated: false, completion: nil)
+        } else if passwordTextField.text != confirmPasswordTextField.text {
             valid = false
-        }
-        
-        if passwordTextField.text != confirmPasswordTextField.text {
-            // ALERT: Password must match
             
-            valid = false
+            let alert = Helper.makeAlert(msg: "Confirm password must match", handler: nil, showCancel: false)
+            present(alert, animated: false, completion: nil)
         }
         
         if valid {
