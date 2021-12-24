@@ -36,13 +36,11 @@ class LoginViewController: UIViewController {
             
             let alert = Helper.makeAlert(msg: "Username cannot be empty", handler: nil, showCancel: false)
             present(alert, animated: false, completion: nil)
-            
         } else if Helper.numberOfCharacters(str: password) == 0 {
             valid = false
             
             let alert = Helper.makeAlert(msg: "Password cannot be empty", handler: nil, showCancel: false)
             present(alert, animated: false, completion: nil)
-
         }
         
         if valid {
