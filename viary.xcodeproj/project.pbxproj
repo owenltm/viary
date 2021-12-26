@@ -20,6 +20,10 @@
 		CE9430B6276B0A8C004BCC97 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9430B5276B0A8C004BCC97 /* RegisterViewController.swift */; };
 		CEBC390B276B1843002C6B35 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC390A276B1843002C6B35 /* Helper.swift */; };
 		E63D4BA427646BFB00DCAEEB /* CreateEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63D4BA327646BFB00DCAEEB /* CreateEditViewController.swift */; };
+		E63D9E9127786E55008CAFDA /* AccountEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63D9E8D27786E55008CAFDA /* AccountEntity+CoreDataClass.swift */; };
+		E63D9E9227786E55008CAFDA /* AccountEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63D9E8E27786E55008CAFDA /* AccountEntity+CoreDataProperties.swift */; };
+		E63D9E9327786E55008CAFDA /* DiaryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63D9E8F27786E55008CAFDA /* DiaryEntity+CoreDataClass.swift */; };
+		E63D9E9427786E55008CAFDA /* DiaryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63D9E9027786E55008CAFDA /* DiaryEntity+CoreDataProperties.swift */; };
 		E645C1892762405500E3305C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E645C1882762405500E3305C /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +43,10 @@
 		CE9430B5276B0A8C004BCC97 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CEBC390A276B1843002C6B35 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E63D4BA327646BFB00DCAEEB /* CreateEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEditViewController.swift; sourceTree = "<group>"; };
+		E63D9E8D27786E55008CAFDA /* AccountEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		E63D9E8E27786E55008CAFDA /* AccountEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		E63D9E8F27786E55008CAFDA /* DiaryEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiaryEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		E63D9E9027786E55008CAFDA /* DiaryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiaryEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		E645C1882762405500E3305C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +80,10 @@
 		CE4E865F275F423D0010B915 /* viary */ = {
 			isa = PBXGroup;
 			children = (
+				E63D9E8D27786E55008CAFDA /* AccountEntity+CoreDataClass.swift */,
+				E63D9E8E27786E55008CAFDA /* AccountEntity+CoreDataProperties.swift */,
+				E63D9E8F27786E55008CAFDA /* DiaryEntity+CoreDataClass.swift */,
+				E63D9E9027786E55008CAFDA /* DiaryEntity+CoreDataProperties.swift */,
 				CE4E8660275F423E0010B915 /* AppDelegate.swift */,
 				CE4E8662275F423E0010B915 /* ViewController.swift */,
 				CE4E8664275F423E0010B915 /* Main.storyboard */,
@@ -164,14 +176,18 @@
 			files = (
 				CE9430B6276B0A8C004BCC97 /* RegisterViewController.swift in Sources */,
 				CE4E8663275F423E0010B915 /* ViewController.swift in Sources */,
+				E63D9E9327786E55008CAFDA /* DiaryEntity+CoreDataClass.swift in Sources */,
+				E63D9E9127786E55008CAFDA /* AccountEntity+CoreDataClass.swift in Sources */,
 				CE4E8661275F423E0010B915 /* AppDelegate.swift in Sources */,
 				E645C1892762405500E3305C /* ProfileViewController.swift in Sources */,
+				E63D9E9227786E55008CAFDA /* AccountEntity+CoreDataProperties.swift in Sources */,
 				CE4E8669275F423E0010B915 /* viary.xcdatamodeld in Sources */,
 				CE9430B4276B0A7A004BCC97 /* LoginViewController.swift in Sources */,
 				E63D4BA427646BFB00DCAEEB /* CreateEditViewController.swift in Sources */,
 				CEBC390B276B1843002C6B35 /* Helper.swift in Sources */,
 				B777B95A27647DED00EF0E4C /* HomeViewController.swift in Sources */,
 				CE9430B0276B0A4F004BCC97 /* WelcomeViewController.swift in Sources */,
+				E63D9E9427786E55008CAFDA /* DiaryEntity+CoreDataProperties.swift in Sources */,
 				CE878CC72775F6EA0005E98D /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
