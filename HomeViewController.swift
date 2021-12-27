@@ -12,7 +12,6 @@ import CoreData
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var diary = [String]()
-    var account: [AccountEntity] = []
     var account2: AccountEntity?
     
     @IBOutlet var diaryTable: UITableView!
@@ -21,32 +20,31 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                let account = AccountEntity(idAccount: 1, password: "andy", username: "andy")
-
-                do {
-                    try account?.managedObjectContext?.save()
-                } catch  {
-
-                }
+//                let account = AccountEntity(idAccount: 1, password: "andy", username: "andy")
+//
+//                do {
+//                    try account?.managedObjectContext?.save()
+//                } catch  {
+//
+//                }
         diaryTable.dataSource = self
         diaryTable.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fecthRequest: NSFetchRequest<AccountEntity> = AccountEntity.fetchRequest()
-        
-        do {
-            account =  try managedContext.fetch(fecthRequest)
-        } catch  {
-            
-        }
-        //        testing.text = account[0].username
-        account2 = account[0]
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+//            return
+//        }
+//
+//        let managedContext = appDelegate.persistentContainer.viewContext
+//        let fecthRequest: NSFetchRequest<AccountEntity> = AccountEntity.fetchRequest()
+//        
+//        do {
+//            account =  try managedContext.fetch(fecthRequest)
+//        } catch  {
+//
+//        }
+       
         
         self.diaryTable.reloadData()
         
@@ -65,20 +63,20 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             guard let destination = segue.destination as? CreateEditViewController else{
                 return
             }
-            destination.account = account[0]
+            destination.account = account2
         }
         else if segue.identifier == "ToProfile" {
             guard let destination = segue.destination as? ProfileViewController else{
                 return
             }
-            destination.account = account[0]
+            destination.account = account2
         }
         else if segue.identifier == "ToEdit"{
             guard let destination = segue.destination as? CreateEditViewController ,
                 let selectedRow = self.diaryTable.indexPathForSelectedRow?.row else {
                     return
             }
-            destination.existingDiary = account[0].diaries?[selectedRow]
+            destination.existingDiary = account2!.diaries?[selectedRow]
         }
         
     }
