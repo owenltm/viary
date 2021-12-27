@@ -13,7 +13,6 @@
         <!--Profile-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ProfileViewController" customModule="viary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -82,8 +81,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="LogOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dmi-q8-Mn8"/>
-                                    <segue destination="Wc2-VK-Vmp" kind="presentation" identifier="ToLogin" id="d3G-ao-SIS"/>
+                                    <segue destination="8Go-dm-1vM" kind="presentation" id="Yrr-Vd-aC6"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GdY-mc-UdT">
@@ -103,6 +101,7 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="Home"/>
                                         <connections>
+                                            <action selector="ToHome:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jO6-51-qPL"/>
                                             <segue destination="LbZ-1m-8cl" kind="presentation" identifier="ToHome" id="7x7-90-Y56"/>
                                         </connections>
                                     </button>
@@ -207,9 +206,9 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="8UF-Pn-i8s"/>
                     <connections>
                         <outlet property="PUsername" destination="5Mf-bk-Ek8" id="Mfw-T3-Idc"/>
-                        <outlet property="ToHome" destination="Rki-ZM-2fR" id="7SB-zd-1hj"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2013.5999999999999" y="-1254.4227886056972"/>
         </scene>
@@ -315,8 +314,8 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="Home"/>
                                         <connections>
-                                            <action selector="ToHome:" destination="8fK-15-y55" eventType="touchUpInside" id="XOC-Vg-ILB"/>
-                                            <segue destination="LbZ-1m-8cl" kind="presentation" identifier="ToHome" id="xw3-6s-g2G"/>
+                                            <action selector="ToHome:" destination="PQU-dN-EPx" eventType="touchUpInside" id="hvg-EX-UVX"/>
+                                            <segue destination="Wc2-VK-Vmp" kind="presentation" id="cqn-n3-u7B"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHl-qe-8Vp">
@@ -419,6 +418,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bcq-Ks-FU4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PQU-dN-EPx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1116" y="-1254"/>
         </scene>
@@ -892,9 +892,9 @@
         <image name="save" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d3G-ao-SIS"/>
-        <segue reference="xw3-6s-g2G"/>
-        <segue reference="SZO-hd-gVa"/>
+        <segue reference="cqn-n3-u7B"/>
+        <segue reference="7x7-90-Y56"/>
+        <segue reference="OLy-tf-hdz"/>
         <segue reference="NeF-GE-zy4"/>
     </inferredMetricsTieBreakers>
 </document>

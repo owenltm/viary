@@ -18,9 +18,7 @@ class ProfileViewController: UIViewController {
         PUsername.text = account.username
     }
     
-    @IBAction func LogOut(_ sender: Any) {
-        
-    }
+
     
     @IBAction func ToHome(_ sender: Any) {
         performSegue(withIdentifier: "ToHome", sender: self)

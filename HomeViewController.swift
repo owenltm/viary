@@ -21,13 +21,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//                let account = AccountEntity(idAccount: 1, password: "andy", username: "andy")
-//
-//                do {
-//                    try account?.managedObjectContext?.save()
-//                } catch  {
-//
-//                }
+                let account = AccountEntity(idAccount: 1, password: "andy", username: "andy")
+
+                do {
+                    try account?.managedObjectContext?.save()
+                } catch  {
+
+                }
         diaryTable.dataSource = self
         diaryTable.delegate = self
     }
@@ -130,10 +130,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         diaryCell.contentView.layer.cornerRadius = 10.0
         
         return diaryCell
-    }
-    
-    @IBAction func unwindToHome(_ unwindSegue: UIStoryboardSegue) {
-        
     }
     
 }
