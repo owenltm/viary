@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class HomeViewController: UIViewController, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var diary = [String]()
     var account: [AccountEntity] = []
@@ -17,17 +17,19 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet var diaryTable: UITableView!
     @IBOutlet weak var testing: UILabel!
+    var dateFormatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                let account = AccountEntity(idAccount: 1, password: "andy", username: "andy")
-        
-                do {
-                    try account?.managedObjectContext?.save()
-                } catch  {
-        
-                }
+//                let account = AccountEntity(idAccount: 1, password: "andy", username: "andy")
+//
+//                do {
+//                    try account?.managedObjectContext?.save()
+//                } catch  {
+//
+//                }
         diaryTable.dataSource = self
+        diaryTable.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,9 +68,48 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             destination.account = account[0]
         }
         else if segue.identifier == "ToProfile" {
-            
+            guard let destination = segue.destination as? ProfileViewController else{
+                return
+            }
+            destination.account = account[0]
+        }
+        else if segue.identifier == "ToEdit"{
+            guard let destination = segue.destination as? CreateEditViewController ,
+                let selectedRow = self.diaryTable.indexPathForSelectedRow?.row else {
+                    return
+            }
+            destination.existingDiary = account[0].diaries?[selectedRow]
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            deleteDiary(at: indexPath)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ToEdit", sender: self)
+    }
+    
+    func deleteDiary(at indexPath: IndexPath){
+        guard let Ddiary = account2?.diaries?[indexPath.row],
+            let managedContext = Ddiary.managedObjectContext else {
+                return
+        }
+        managedContext.delete(Ddiary)
+        do {
+            try managedContext.save()
+            
+            diaryTable.reloadData()
+        } catch  {
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,7 +121,9 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         if let diaries = account2?.diaries?[indexPath.row] {
             diaryCell.textLabel?.text = diaries.title
             if let date = diaries.date1{
-                diaryCell.detailTextLabel?.text = "11/2/2002"
+                dateFormatter.dateFormat = "dd/MM/yyyy"
+                let result = dateFormatter.string(from: date)
+                diaryCell.detailTextLabel?.text = result
             }
         }
         

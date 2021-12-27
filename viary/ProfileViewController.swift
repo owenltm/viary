@@ -9,14 +9,38 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
-   
+    
+    
     @IBOutlet weak var PUsername: UITextField!
+    var account: AccountEntity!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        PUsername.text = account.username
     }
     
-
-
+    @IBAction func LogOut(_ sender: Any) {
+        
+    }
+    
+    @IBAction func ToHome(_ sender: Any) {
+        performSegue(withIdentifier: "ToHome", sender: self)
+    }
+    
+    
+    @IBAction func ToCreate(_ sender: Any) {
+        performSegue(withIdentifier: "ToCreate", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToHome"{
+            let dest = segue.destination as! HomeViewController
+            dest.account2 = account
+        }
+        else if segue.identifier == "ToCreate"{
+            let dest = segue.destination as! CreateEditViewController
+            dest.account = account
+        }
+        
+    }
+    
 }

@@ -10,11 +10,11 @@ import UIKit
 
 class CreateEditViewController: UIViewController, UITextViewDelegate {
     
-    
     @IBOutlet weak var DTitle: UITextField!
     @IBOutlet weak var DContent: UITextView!
     
     var account: AccountEntity?
+    var existingDiary: DiaryEntity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,18 @@ class CreateEditViewController: UIViewController, UITextViewDelegate {
         DContent.text = "Write your content here"
         DContent.delegate = self
         
+        DTitle.text = existingDiary?.title
+        DContent.text = existingDiary?.content
+        
+    }
+    
+    func alert(title:String ,msg:String, handler:((UIAlertAction)->Void)?){
+        let alert = UIAlertController(title:title, message: msg, preferredStyle: .actionSheet)
+        let okaction = UIAlertAction(title: "OK", style: .default, handler: handler)
+        alert.view.backgroundColor = UIColor.white
+        alert.addAction(okaction)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -48,27 +60,65 @@ class CreateEditViewController: UIViewController, UITextViewDelegate {
         let title = DTitle.text
         let content = DContent.text
         let date = Date()
-        DTitle.text = "test"
-        //        let date = Date()
-        //        let formater = DateFormatter()
-        //        formater.dateFormat = "dd.MM.yyyy"
-        //        let result = formater.string(from: date)
+       
+        var ediary: DiaryEntity?
+        if let existingDiary = existingDiary{
+            existingDiary.title = title
+            existingDiary.content = content
+            
+            ediary = existingDiary
+        }
+        else {
+            ediary = DiaryEntity(id: 1, title: title, content: content, date1: date)
+            
+        }
         
-        if let diaries = DiaryEntity(id: 1, title: title, content: content, date1: date){
-            account?.addToDiarys(diaries)
-            do{
-                try diaries.managedObjectContext?.save()
-                 DTitle.text = "test"
-            }catch{
-                
+        
+        //        let date = Date()
+        
+        if  title == "" {
+            alert(title: "Fail", msg: "Please fill the title", handler: nil)
+        }
+        else if content!.count < 50 {
+            alert(title: "Fail", msg: "Content must be at least 50 characters", handler: nil)
+            
+        } else{
+            if let diaries = ediary{
+                account?.addToDiarys(diaries)
+                do{
+                    try diaries.managedObjectContext?.save()
+                    alert(title: "Success", msg: "Diary has been saved", handler: nil)
+                    DTitle.text = ""
+                    DContent.text = ""
+                }catch{
+                    
+                }
             }
         }
+        
+        
     }
     
     
     @IBAction func ToHome(_ sender: Any) {
-        
+        performSegue(withIdentifier: "ToHome", sender: self)
     }
+    
+    @IBAction func ToProfile(_ sender: Any) {
+        performSegue(withIdentifier: "ToProfile", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToHome" {
+            let dest = segue.destination as! HomeViewController
+            dest.account2 = account
+        }
+        else if segue.identifier == "ToProfile"{
+            let dest = segue.destination as! ProfileViewController
+            dest.account = account
+        }
+    }
+    
     
     
     
