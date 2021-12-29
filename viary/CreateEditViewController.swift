@@ -25,7 +25,9 @@ class CreateEditViewController: UIViewController, UITextViewDelegate {
         
         DTitle.text = existingDiary?.title
         DContent.text = existingDiary?.content
-        
+        if(DContent.text == "Write your content here"){
+            DContent.textColor = .black
+        }
     }
     
     func alert(title:String ,msg:String, handler:((UIAlertAction)->Void)?){
@@ -43,7 +45,7 @@ class CreateEditViewController: UIViewController, UITextViewDelegate {
     
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == .lightGray {
+        if textView.textColor == .lightGray && DContent.text == "Write your content here" {
             textView.text = nil
             textView.textColor = .black
         }
