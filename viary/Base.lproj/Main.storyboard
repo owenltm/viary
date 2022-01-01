@@ -706,7 +706,7 @@
                                 <rect key="frame" x="16" y="474" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tf5-4y-XaT">
                                 <rect key="frame" x="16" y="552" width="343" height="48"/>
@@ -725,7 +725,7 @@
                                 <rect key="frame" x="16" y="391" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTER A NEW ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIR-00-MEx">
                                 <rect key="frame" x="16" y="220" width="284" height="27"/>
@@ -819,7 +819,7 @@
                                 <rect key="frame" x="16" y="415" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN TO EXISTING ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBo-Aj-DCf">
                                 <rect key="frame" x="16" y="244" width="309" height="27"/>
@@ -892,7 +892,7 @@
         <image name="save" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dov-id-5n2"/>
+        <segue reference="Id6-zx-YpK"/>
         <segue reference="OLy-tf-hdz"/>
         <segue reference="NeF-GE-zy4"/>
     </inferredMetricsTieBreakers>
