@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var context: NSManagedObjectContext!
     
+    var authenticatedUser: AccountEntity?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +25,11 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "goToMain" {
+            let dest = segue.destination as! HomeViewController
+            
+            dest.account2 = authenticatedUser
+        }
     }
     
     @IBAction func login(_ sender: Any) {
@@ -54,18 +60,37 @@ class LoginViewController: UIViewController {
     }
     
     func authenticateUser(username: String, password: String)->Bool {
-        let req = NSFetchRequest<NSFetchRequestResult>(entityName: "AccountEntity")
+        
+        let req: NSFetchRequest<AccountEntity> = AccountEntity.fetchRequest()
         let predicate = NSPredicate(format: "username == %@", username)
         req.predicate = predicate
         
-        var results = [NSManagedObject]()
+        var results = [AccountEntity]()
         
         do {
-            results = try context.fetch(req) as! [NSManagedObject]
+            results = try context.fetch(req)
+            
+            authenticatedUser = results[0]
         } catch {
             print("(ERROR) Error getting user data")
+            let alert = Helper.makeAlert(msg: "Error authenticating account", handler: nil, showCancel: false)
+            present(alert, animated: false, completion: nil)
         }
         
         return results.count > 0
+        
+//        let req = NSFetchRequest<NSFetchRequestResult>(entityName: "AccountEntity")
+//        let predicate = NSPredicate(format: "username == %@", username)
+//        req.predicate = predicate
+//
+//        var results = [NSManagedObject]()
+//
+//        do {
+//            results = try context.fetch(req) as! [NSManagedObject]
+//        } catch {
+//            print("(ERROR) Error getting user data")
+//        }
+//
+//        return results.count > 0
     }
 }

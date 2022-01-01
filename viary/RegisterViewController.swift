@@ -15,13 +15,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet var confirmPasswordTextField: UITextField!
     
     let defaults = UserDefaults.standard
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var context: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        context = appDelegate.persistentContainer.viewContext
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -38,7 +35,7 @@ class RegisterViewController: UIViewController {
         if Helper.numberOfCharacters(str: username) < 6 {
             // ALERT: username must be atleast 6 charactersvalid = false
             
-            let alert = Helper.makeAlert(msg: "Ssername must be atleast 6 characters", handler: nil, showCancel: false)
+            let alert = Helper.makeAlert(msg: "Username must be atleast 6 characters", handler: nil, showCancel: false)
             present(alert, animated: false, completion: nil)
 
         } else if Helper.numberOfCharacters(str: password) < 8 {
@@ -56,25 +53,21 @@ class RegisterViewController: UIViewController {
         if valid {
             // REGISTER USER TO DB
             let userCount = defaults.double(forKey: "userCount")
-            //print("test: \(test)")
             
-            let entity = NSEntityDescription.entity(forEntityName: "AccountEntity", in: context)
-            let newUser = NSManagedObject(entity: entity!, insertInto: context)
-            
-            newUser.setValue(userCount, forKey: "idAccount")
-            newUser.setValue(username, forKey: "username")
-            newUser.setValue(password, forKey: "password")
+            let newAccount = AccountEntity(idAccount: userCount, password: password, username: username)
             
             do {
-                try context.save()
-                print("(INFO) New user created")
+                try newAccount?.managedObjectContext?.save()
                 
-//                registeredUser = User(idUser: userCount, username: username, password: password)
                 defaults.setValue(userCount + 1, forKey: "userCount")
+                print("Berhasil register")
                 
                 performSegue(withIdentifier: "backToWelcome", sender: self)
             } catch {
-                print("(ERROR) New user created")
+                print("ERROR registering account")
+                
+                let alert = Helper.makeAlert(msg: "Error registering account", handler: nil, showCancel: false)
+                present(alert, animated: false, completion: nil)
             }
         }
     }
