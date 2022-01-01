@@ -77,6 +77,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     return
             }
             destination.existingDiary = account2!.diaries?[selectedRow]
+            destination.account = account2
         }
         
     }
