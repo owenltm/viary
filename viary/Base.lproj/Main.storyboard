@@ -315,7 +315,7 @@
                                         <state key="normal" backgroundImage="Home"/>
                                         <connections>
                                             <action selector="ToHome:" destination="PQU-dN-EPx" eventType="touchUpInside" id="hvg-EX-UVX"/>
-                                            <segue destination="Wc2-VK-Vmp" kind="presentation" id="cqn-n3-u7B"/>
+                                            <segue destination="LbZ-1m-8cl" kind="showDetail" identifier="ToHome" id="dov-id-5n2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHl-qe-8Vp">
@@ -892,9 +892,8 @@
         <image name="save" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cqn-n3-u7B"/>
-        <segue reference="Id6-zx-YpK"/>
-        <segue reference="SZO-hd-gVa"/>
-        <segue reference="Dmr-Ad-Xtg"/>
+        <segue reference="dov-id-5n2"/>
+        <segue reference="OLy-tf-hdz"/>
+        <segue reference="NeF-GE-zy4"/>
     </inferredMetricsTieBreakers>
 </document>
