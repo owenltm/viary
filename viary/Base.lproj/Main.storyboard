@@ -445,6 +445,7 @@
                     <connections>
                         <outlet property="DContent" destination="UN2-TG-q1I" id="YiB-lm-5wW"/>
                         <outlet property="DTitle" destination="vZe-PG-ffv" id="D8E-Sm-e1A"/>
+                        <outlet property="DiaryTitle" destination="BOa-vo-VZy" id="hKC-8L-EdP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bcq-Ks-FU4" userLabel="First Responder" sceneMemberID="firstResponder"/>

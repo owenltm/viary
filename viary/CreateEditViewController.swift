@@ -15,6 +15,7 @@ class CreateEditViewController: UIViewController, UITextViewDelegate {
     
     var account: AccountEntity?
     var existingDiary: DiaryEntity?
+    @IBOutlet weak var DiaryTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class CreateEditViewController: UIViewController, UITextViewDelegate {
         DTitle.text = existingDiary?.title
         if ((existingDiary?.content) != nil){
             DContent.text = existingDiary?.content
+            DiaryTitle.text = "Edit"
         }
         if(DContent.text != "Write your content here"){
             DContent.textColor = .black
