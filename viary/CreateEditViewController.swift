@@ -24,8 +24,10 @@ class CreateEditViewController: UIViewController, UITextViewDelegate {
         DContent.delegate = self
         
         DTitle.text = existingDiary?.title
-        DContent.text = existingDiary?.content
-        if(DContent.text == "Write your content here"){
+        if ((existingDiary?.content) != nil){
+            DContent.text = existingDiary?.content
+        }
+        if(DContent.text != "Write your content here"){
             DContent.textColor = .black
         }
     }

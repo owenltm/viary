@@ -81,7 +81,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="8Go-dm-1vM" kind="presentation" id="Yrr-Vd-aC6"/>
+                                    <segue destination="8Go-dm-1vM" kind="presentation" modalTransitionStyle="flipHorizontal" id="Yrr-Vd-aC6"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GdY-mc-UdT">
@@ -102,7 +102,7 @@
                                         <state key="normal" backgroundImage="Home"/>
                                         <connections>
                                             <action selector="ToHome:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jO6-51-qPL"/>
-                                            <segue destination="LbZ-1m-8cl" kind="presentation" identifier="ToHome" id="7x7-90-Y56"/>
+                                            <segue destination="LbZ-1m-8cl" kind="presentation" identifier="ToHome" modalTransitionStyle="coverVertical" id="7x7-90-Y56"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pu3-pX-sUG">
@@ -114,7 +114,7 @@
                                         <state key="normal" backgroundImage="Create"/>
                                         <connections>
                                             <action selector="ToCreate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X3y-5N-Rza"/>
-                                            <segue destination="8fK-15-y55" kind="presentation" identifier="ToCreate" id="OLy-tf-hdz"/>
+                                            <segue destination="8fK-15-y55" kind="presentation" identifier="ToCreate" modalTransitionStyle="coverVertical" id="OLy-tf-hdz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DK1-lR-kCd">
@@ -173,16 +173,45 @@
                                     <constraint firstItem="COk-xn-kJM" firstAttribute="centerY" secondItem="GdY-mc-UdT" secondAttribute="centerY" id="vNc-nm-mhE"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Diary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsZ-k6-K1Z">
+                                <rect key="frame" x="14" y="423" width="93" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tm6-ia-Dob">
+                                <rect key="frame" x="14" y="456" width="345" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="bp9-dE-1kd"/>
+                                    <constraint firstAttribute="height" constant="40" id="r2n-bu-aiz"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="tm6-ia-Dob" firstAttribute="top" secondItem="HsZ-k6-K1Z" secondAttribute="bottom" constant="10" id="2wt-Qz-Ax9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Mf-bk-Ek8" secondAttribute="trailing" constant="15" id="4G4-ff-NL1"/>
                             <constraint firstItem="5Mf-bk-Ek8" firstAttribute="top" secondItem="Mrk-gx-bD6" secondAttribute="bottom" constant="10" id="5eQ-Y9-ibD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tm6-ia-Dob" secondAttribute="trailing" constant="16" id="8rJ-Gg-kha"/>
                             <constraint firstItem="GdY-mc-UdT" firstAttribute="top" secondItem="oLz-uN-dEC" secondAttribute="bottom" constant="50" id="BMj-Vm-ffm"/>
+                            <constraint firstItem="HsZ-k6-K1Z" firstAttribute="top" secondItem="5Mf-bk-Ek8" secondAttribute="bottom" constant="8" id="C9p-3g-nN9"/>
                             <constraint firstItem="Mrk-gx-bD6" firstAttribute="top" secondItem="W2j-oE-xXK" secondAttribute="bottom" constant="262" id="GUZ-he-3Vk"/>
+                            <constraint firstItem="tm6-ia-Dob" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="I8I-E8-6zl"/>
                             <constraint firstItem="5Mf-bk-Ek8" firstAttribute="top" secondItem="Mrk-gx-bD6" secondAttribute="bottom" constant="10" id="J94-gU-U1O"/>
                             <constraint firstItem="oLz-uN-dEC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ke9-47-Bzr"/>
                             <constraint firstItem="CoH-KQ-YCE" firstAttribute="top" secondItem="W2j-oE-xXK" secondAttribute="bottom" constant="50" id="PBp-OG-BWC"/>
+                            <constraint firstItem="HsZ-k6-K1Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="S4F-zc-XZX"/>
                             <constraint firstItem="W2j-oE-xXK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SUm-rT-xJv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mrk-gx-bD6" secondAttribute="trailing" symbolic="YES" id="Tps-sY-am4"/>
                             <constraint firstItem="W2j-oE-xXK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UPs-WG-Qw6"/>
@@ -206,6 +235,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="8UF-Pn-i8s"/>
                     <connections>
                         <outlet property="PUsername" destination="5Mf-bk-Ek8" id="Mfw-T3-Idc"/>
+                        <outlet property="TotalDiary" destination="tm6-ia-Dob" id="pZe-iI-52b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -315,7 +345,7 @@
                                         <state key="normal" backgroundImage="Home"/>
                                         <connections>
                                             <action selector="ToHome:" destination="PQU-dN-EPx" eventType="touchUpInside" id="hvg-EX-UVX"/>
-                                            <segue destination="LbZ-1m-8cl" kind="showDetail" identifier="ToHome" id="dov-id-5n2"/>
+                                            <segue destination="LbZ-1m-8cl" kind="presentation" identifier="ToHome" modalTransitionStyle="coverVertical" id="dov-id-5n2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHl-qe-8Vp">
@@ -335,7 +365,7 @@
                                         <state key="normal" backgroundImage="Profile"/>
                                         <connections>
                                             <action selector="ToProfile:" destination="8fK-15-y55" eventType="touchUpInside" id="yTt-Bw-nVL"/>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" identifier="ToProfile" id="NeF-GE-zy4"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" identifier="ToProfile" modalTransitionStyle="coverVertical" id="NeF-GE-zy4"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaA-8c-iNC">
@@ -480,7 +510,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.459795177" green="0.1372373402" blue="0.11603356149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <segue destination="8fK-15-y55" kind="presentation" identifier="ToEdit" id="ab9-Yw-t6o"/>
+                                            <segue destination="8fK-15-y55" kind="presentation" identifier="ToEdit" modalTransitionStyle="crossDissolve" id="ab9-Yw-t6o"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -511,7 +541,7 @@
                                         <state key="normal" backgroundImage="Create"/>
                                         <connections>
                                             <action selector="ToCreate:" destination="LbZ-1m-8cl" eventType="touchUpInside" id="IHQ-1O-KSa"/>
-                                            <segue destination="8fK-15-y55" kind="presentation" identifier="ToCreate" id="SZO-hd-gVa"/>
+                                            <segue destination="8fK-15-y55" kind="presentation" identifier="ToCreate" modalTransitionStyle="coverVertical" id="SZO-hd-gVa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-su-X8q">
@@ -523,7 +553,7 @@
                                         <state key="normal" backgroundImage="Profile"/>
                                         <connections>
                                             <action selector="ToProfile:" destination="LbZ-1m-8cl" eventType="touchUpInside" id="4tg-fZ-uOD"/>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" identifier="ToProfile" id="Dmr-Ad-Xtg"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" identifier="ToProfile" modalTransitionStyle="coverVertical" id="Dmr-Ad-Xtg"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYZ-eg-Z5Q">
@@ -875,7 +905,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="f2v-Ef-5Sp" id="cjr-oD-lX4"/>
                         <outlet property="usernameTextField" destination="kQf-VC-SDY" id="kDq-sT-9By"/>
-                        <segue destination="LbZ-1m-8cl" kind="presentation" identifier="goToMain" id="Id6-zx-YpK"/>
+                        <segue destination="LbZ-1m-8cl" kind="presentation" identifier="goToMain" modalTransitionStyle="coverVertical" id="Id6-zx-YpK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Sa-cO-A3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -892,8 +922,8 @@
         <image name="save" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Id6-zx-YpK"/>
-        <segue reference="OLy-tf-hdz"/>
+        <segue reference="dov-id-5n2"/>
+        <segue reference="ab9-Yw-t6o"/>
         <segue reference="NeF-GE-zy4"/>
     </inferredMetricsTieBreakers>
 </document>

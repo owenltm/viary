@@ -11,11 +11,13 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     
+    @IBOutlet weak var TotalDiary: UITextField!
     @IBOutlet weak var PUsername: UITextField!
     var account: AccountEntity!
     override func viewDidLoad() {
         super.viewDidLoad()
         PUsername.text = account.username
+        TotalDiary.text = "\(account.diaries?.count ?? 0) diaries"
     }
     
 
