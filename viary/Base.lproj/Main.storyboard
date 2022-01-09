@@ -839,6 +839,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editingEnd:" destination="Wc2-VK-Vmp" eventType="editingDidEnd" id="U7u-BY-vzi"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQB-U4-3y2">
                                 <rect key="frame" x="16" y="378" width="79" height="21"/>
@@ -851,6 +854,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="editingEnd:" destination="Wc2-VK-Vmp" eventType="editingDidEnd" id="Dtx-8r-FrW"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN TO EXISTING ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBo-Aj-DCf">
                                 <rect key="frame" x="16" y="244" width="309" height="27"/>
@@ -923,7 +929,7 @@
         <image name="save" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dov-id-5n2"/>
+        <segue reference="Id6-zx-YpK"/>
         <segue reference="ab9-Yw-t6o"/>
         <segue reference="NeF-GE-zy4"/>
     </inferredMetricsTieBreakers>

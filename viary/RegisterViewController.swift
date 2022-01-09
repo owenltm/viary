@@ -25,6 +25,16 @@ class RegisterViewController: UIViewController {
         //let dest = segue.destination as! ViewController
     }
     
+    func dismissKeyboard() {
+        usernameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        confirmPasswordTextField.resignFirstResponder()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismissKeyboard()
+    }
+    
     @IBAction func registerUser(_ sender: Any) {
         var valid = true;
         

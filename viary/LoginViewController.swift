@@ -32,6 +32,19 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func dismissKeyboard() {
+        usernameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismissKeyboard()
+    }
+    
+    @IBAction func editingEnd(_ sender: Any) {
+        dismissKeyboard()
+    }
+    
     @IBAction func login(_ sender: Any) {
         var valid = true
         let username = usernameTextField.text!
