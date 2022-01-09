@@ -34,16 +34,19 @@ class RegisterViewController: UIViewController {
         
         if Helper.numberOfCharacters(str: username) < 6 {
             // ALERT: username must be atleast 6 charactersvalid = false
+            valid = false
             
             let alert = Helper.makeAlert(msg: "Username must be atleast 6 characters", handler: nil, showCancel: false)
             present(alert, animated: false, completion: nil)
 
-        } else if Helper.numberOfCharacters(str: password) < 8 {
+        }
+        if Helper.numberOfCharacters(str: password) < 8 {
             valid = false
             
             let alert = Helper.makeAlert(msg: "Password must be atleast 8 characters", handler: nil, showCancel: false)
             present(alert, animated: false, completion: nil)
-        } else if password != confirmPassword {
+        }
+        if password != confirmPassword {
             valid = false
             
             let alert = Helper.makeAlert(msg: "Confirm password must match", handler: nil, showCancel: false)
