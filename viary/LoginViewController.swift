@@ -55,6 +55,8 @@ class LoginViewController: UIViewController {
                 performSegue(withIdentifier: "goToMain", sender: self)
             } else {
                 print("(INFO) Authenticate false")
+                let alert = Helper.makeAlert(msg: "Invalid username and password", handler: nil, showCancel: false)
+                present(alert, animated: false, completion: nil)
             }
         }
     }
@@ -70,7 +72,14 @@ class LoginViewController: UIViewController {
         do {
             results = try context.fetch(req)
             
-            authenticatedUser = results[0]
+            if results.count > 0 {
+                if(password == results[0].password!){
+                    authenticatedUser = results[0]
+                } else {
+                    let alert = Helper.makeAlert(msg: "Invalid password", handler: nil, showCancel: false)
+                    present(alert, animated: false, completion: nil)
+                }
+            }
         } catch {
             print("(ERROR) Error getting user data")
             let alert = Helper.makeAlert(msg: "Error authenticating account", handler: nil, showCancel: false)
@@ -78,19 +87,5 @@ class LoginViewController: UIViewController {
         }
         
         return results.count > 0
-        
-//        let req = NSFetchRequest<NSFetchRequestResult>(entityName: "AccountEntity")
-//        let predicate = NSPredicate(format: "username == %@", username)
-//        req.predicate = predicate
-//
-//        var results = [NSManagedObject]()
-//
-//        do {
-//            results = try context.fetch(req) as! [NSManagedObject]
-//        } catch {
-//            print("(ERROR) Error getting user data")
-//        }
-//
-//        return results.count > 0
     }
 }
