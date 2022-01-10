@@ -50,15 +50,15 @@ class LoginViewController: UIViewController {
         let username = usernameTextField.text!
         let password = passwordTextField.text!
         
-        if Helper.numberOfCharacters(str: username) == 0{
+        if Helper.numberOfCharacters(str: username) == 6 {
             valid = false
             
-            let alert = Helper.makeAlert(msg: "Username cannot be empty", handler: nil, showCancel: false)
+            let alert = Helper.makeAlert(msg: "Username must be atleast 6 characters", handler: nil, showCancel: false)
             present(alert, animated: false, completion: nil)
-        } else if Helper.numberOfCharacters(str: password) == 0 {
+        } else if Helper.numberOfCharacters(str: password) == 8 {
             valid = false
             
-            let alert = Helper.makeAlert(msg: "Password cannot be empty", handler: nil, showCancel: false)
+            let alert = Helper.makeAlert(msg: "Password must be atleast 8 characters", handler: nil, showCancel: false)
             present(alert, animated: false, completion: nil)
         }
         
